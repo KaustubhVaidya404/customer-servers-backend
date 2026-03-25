@@ -28,7 +28,7 @@ The Pipeline Service is a FastAPI-based backend designed to ingest, process, and
 
 The service expects the following environment variables:
 
-- `DATABASE_URL`: PostgreSQL connection string (e.g., `postgresql://user:pass@localhost:5432/dbname`)
+- `DATABASE_URL`: PostgreSQL connection string (e.g., `postgresql://postgres:root@localhost:5432/customer_db`)
 - `FLASK_BASE_URL`: Base URL of the Mock Server (e.g., `http://mock-server:3000`)
 
 ### Local Setup

@@ -1,10 +1,19 @@
 import json
+import logging
 from config import DATA_FILE
+
+logger = logging.getLogger(__name__)
 
 
 def load_customers():
-    with open(DATA_FILE, "r") as f:
-        return json.load(f)
+    try:
+        with open(DATA_FILE, "r") as f:
+            data = json.load(f)
+            logger.debug(f"Loaded {len(data)} customers from {DATA_FILE}")
+            return data
+    except Exception as e:
+        logger.error(f"Failed to load customers from {DATA_FILE}: {str(e)}")
+        raise
 
 
 def get_all_customers():
